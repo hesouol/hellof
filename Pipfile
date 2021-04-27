@@ -1,0 +1,24 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+hellofresh = { editable = true, path = "." }
+pylint = "*"
+pytest = "*"
+
+[packages]
+hellofresh = { path = "." }
+pyspark = "*"
+jupyter = "*"
+mocker = "*"
+
+[scripts]
+packager = "python setup.py bdist_egg"
+linter = "pylint hellofresh tests"
+unit-test = "pytest -k unit"
+integration-test = "pytest -k integration"
+
+[requires]
+python_version = "3.9"
